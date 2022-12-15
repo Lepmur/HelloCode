@@ -28,10 +28,10 @@ Console.WriteLine("Введи второе число: ");
 int number2 = int.Parse(Console.ReadLine()!);
 
 if (Math.Pow(number2, 2) == number1 ) {
-    Console.WriteLine ($"Число {number1} является квадратом числа {number2} ");}
-    else
-    {
-       Console.WriteLine ($"Число {number1} не является квадратом числа {number2} ");
+    Console.WriteLine ($"Число {number1} является квадратом числа {number2} ");
+    }
+    else {
+    Console.WriteLine ($"Число {number1} не является квадратом числа {number2} ");
     }
 */
 
