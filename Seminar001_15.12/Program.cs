@@ -18,9 +18,7 @@ while (b <= a) {
 }
 */
 
-
 // 1задача:
-
 /*
 Console.WriteLine("Введи первое число: ");
 int number1 = int.Parse(Console.ReadLine()!);
