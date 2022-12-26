@@ -1,14 +1,33 @@
 ﻿int[] TwoSum(int[] nums, int target) // функция принимает на ввод массив и число. возвращает индексы элементов, сумма которых равна этому числу
 {
-    int[] ind = new int[2];
-    for (int i1 = 0, i2 = 1; i1 < (nums.Length - 1) || i2 < (nums.Length - 1); i1++) 
+    Dictionary<int, int> temp = new Dictionary<int, int>();
+    for (int i = 0; i < nums.Length; i++) 
     {
-        if (nums[i1] + nums[i2] == target) 
+        int j = target - nums[i];
+        if (temp.ContainsKey(j)) 
         {
-            ind[0] = i1;
-            ind[1] = i2;
-        } 
-        else i2++;
+            return new int[] {temp[j], i};
+        }
+        else 
+        {
+            temp[nums[i]] = i;
+        }
     }
-    return ind;
+    throw new Exception ("Not found!");
 }
+
+/*
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.Length; i++) {
+            for (int j = i+1; j < nums.Length; j++) {
+                if (nums[i] + nums[j] == target) 
+                {
+                    return new int [] {i, j};
+                }
+            }
+        }
+        throw new Exception ("Not found!");
+    }
+}
+*/
