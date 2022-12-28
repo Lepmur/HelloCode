@@ -16,6 +16,9 @@
     throw new Exception ("Not found!");
 }
 
+int[] a = new int[5];
+TwoSum(a, 4);
+
 /*
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
