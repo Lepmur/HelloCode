@@ -1,25 +1,17 @@
-﻿/*
-bool IsPalindrome(int x) 
+﻿bool IsPalindrome(int x) 
 {
-    string array = Convert.ToString(x);
-    int length = array.Length;
-    for (int i = 0, j = (length - 1); i < ((length / 2) - 1); i++)
+    string array = Convert.ToString(x); // конвертируем число в строку, чтобы можно было сравнивать каждый символ отдельно
+    int i = 0;
+    int j = array.Length - 1;
+    while (i < j) // шагаем по "массиву"(слову) смотря на первый и последний символ, пока они не сблизились
     {
-        if (Convert.ToInt32(array[i]) == Convert.ToInt32(array[j])) return true;
-        else break;
+        if (array[i] != array[j]) // если они разные
+            return false; // возвращаем false
+        i++; // иначе берем следующую пару
+        j--;
     }
-    return false;
+       return true; // элементы сблизились и мы не вылетели в false - число палиндром!
 }
-*/
-int x = 122;
-string array = Convert.ToString(x);
-        int length = array.Length;
-        int a;
-        for (int i = 0, j = (length - 1); i < (length / 2); i++, j--)
-        {
-            if ((array[i]) == array[j]) a = 1;
-            else a = 2;
-            System.Console.WriteLine(a);
-        }
 
-
+int number = 15951; // пример - сравнили 1 и 1, сравнили 5 и 5, 9 не сравниваем т к сблизились, в false не вылетели - палиндром
+System.Console.WriteLine(IsPalindrome(number));

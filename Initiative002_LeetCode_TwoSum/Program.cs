@@ -1,36 +1,37 @@
-﻿int[] TwoSum(int[] nums, int target) // функция принимает на ввод массив и число. возвращает индексы элементов, сумма которых равна этому числу
+﻿void PrintArray(int[] col) //функция для вывода на печать массива, просто для проверки вывода
 {
-    Dictionary<int, int> temp = new Dictionary<int, int>();
-    for (int i = 0; i < nums.Length; i++) 
+    int count = col.Length;
+    int position = 0;
+    while (position < count) 
     {
-        int j = target - nums[i];
-        if (temp.ContainsKey(j)) 
-        {
-            return new int[] {temp[j], i};
-        }
-        else 
-        {
-            temp[nums[i]] = i;
-        }
+        Console.Write($"{col[position]} ");
+        position++;
     }
-    throw new Exception ("Not found!");
 }
 
-int[] a = new int[5];
-TwoSum(a, 4);
-
-/*
-public class Solution {
-    public int[] TwoSum(int[] nums, int target) {
-        for (int i = 0; i < nums.Length; i++) {
-            for (int j = i+1; j < nums.Length; j++) {
-                if (nums[i] + nums[j] == target) 
-                {
-                    return new int [] {i, j};
-                }
+int[] TwoSum(int[] nums, int target) // принимает на ввод массив NUMS и число TARGET, возвращает массив из индексов 2-х элементов массива NUMS, сумма которых равняется TARGET
+{
+    int i = 0; // объявляем 2 счетчика
+    int j = 1;
+    int [] result = new int[2]; // объявляем массив для вывода результата
+    while (i < nums.Length) // шагаем по массиву nums первым элементом
+    {
+        while (j < nums.Length) // шагаем по массиву nums вторым элементом
+        {
+            if (nums[i] + nums[j] == target) // если сумма текущих элементов равна target
+            {
+                result[0] = i; // присваиваем элементав массива с результатом номера индексов этих элементов
+                result[1] = j;
+                return result; // возвращаем массив с результатом
             }
+            j++;
         }
-        throw new Exception ("Not found!");
+        i++;
+        j = i + 1; // не забываем "обнулить" позицию счетчика j
     }
+    throw new Exception ("Not found!"); // на случай если сумма не найдена совсем
 }
-*/
+
+int [] nums = {4,33,9,12,64,23,6,3}; // для проверки, число 9 даст сумма элементов 6 и 3, из индексы [6,7]
+int target = 9;
+PrintArray(TwoSum(nums, target));

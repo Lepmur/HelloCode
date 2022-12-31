@@ -1,10 +1,9 @@
-﻿public class Solution {
-    public int RomanToInt(string s) {
+﻿int RomanToInt(string s) { // функция принимает на ввод римскую цифру (латинскими заглавными) и выводит её арабский эквивалент
         int result = 0;
-        int[] array = new int[s.Length];
-        for (int i = 0; i < s.Length; i++)
+        int[] array = new int[s.Length]; //объявляем массив чисел, длиной равной длине массива из букв
+        for (int i = 0; i < s.Length; i++)  // шагаем по каждому элементу буквенного массива
         {
-            if (s[i] == 'I') array[i] = 1;
+            if (s[i] == 'I') array[i] = 1;  // присваем каждому элементу массива из чисел - эквивалент буквы из массива с буквами (из IV получится 1,5)
             if (s[i] == 'V') array[i] = 5;
             if (s[i] == 'X') array[i] = 10;
             if (s[i] == 'L') array[i] = 50;
@@ -13,12 +12,16 @@
             if (s[i] == 'M') array[i] = 1000;
         }
         int last = 0;
-        for (int i = (array.Length - 1); i >= 0; i--)
+        for (int i = (array.Length - 1); i >= 0; i--) // шагаем с последнего элемента цифрового массива до 0-го
         {
-            if (array[i] < last) result -= array[i];
-            else result += array[i];
-            last = array[i];
+            if (array[i] < last) // если текущий элемент цифрового масива меньше стоящего ПОСЛЕ него (если цифра IV, то 1<5))
+                result -= array[i]; // отнимаем его от результата (IV = V-I = 5-1 = 4)
+            else result += array[i]; // иначе прибавляем его к результату (VI = V+I = 5+1 = 6)
+            last = array[i]; // запоминаем текущий элемент массива как "предыдущий" для следующей итерации (в первую итерацию равен 0, т.к. справа пусто)
         }
         return result;
     }
-}
+
+string rome = "MCMXCIV"; //пример MCMXCIV => 1000,100,1000,10,100,1,5 => 5-1 + 100-10 + 1000-100 + 1000 => 1994
+RomanToInt(rome);
+System.Console.WriteLine(RomanToInt(rome));
