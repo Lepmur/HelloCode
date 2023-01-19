@@ -13,7 +13,7 @@ foreach (int el in array)
         negativeSum += el;
 }
 Console.WriteLine($"Сумма положительных равна {positiveSum}, сумма отрицательных равна {negativeSum}");
-*/
+
 // ------Метод------
 int[] GetArray (int size, int minValue, int maxValue)
 {
@@ -23,13 +23,14 @@ int[] GetArray (int size, int minValue, int maxValue)
     }
     return res;
 }
+*/
 
 
 //=================== ЗАДАЧИ
 
 //Напишите программу замены элементов массива:  
 // положительные элементы замените на отрицательные 
-
+/*
 int[] GetArray2 (int size)
 {
     int[] Array = new int[size];
@@ -37,7 +38,7 @@ int[] GetArray2 (int size)
       Array[i] = new Random().Next(-10, 11);
     return Array; 
 }
-/*
+
 int[] Array = GetArray2(10); 
 Console.WriteLine($"[{String.Join(", ",Array)}]"); 
 for (int i = 0; i < Array.Length; i++) 
@@ -49,7 +50,7 @@ Console.WriteLine($"[{String.Join(", ",Array)}]");
 
 //  Задайте массив и напишите программу,
 // определяет, присутствует ли ли заданное число в массиве
-
+/*
 int[] GetArray1 (int size)
 {
     int[] Array = new int[size];
@@ -59,7 +60,7 @@ int[] GetArray1 (int size)
     }
     return Array;
 }
-/*
+
 int[] Array = GetArray1(10); 
 int Find = -5; 
 Console.WriteLine($"[{String.Join(", ",Array)}]"); 
@@ -67,7 +68,7 @@ if (FindElement(Array, Find))
     Console.WriteLine($"Данный элемент найден"); 
 else
     Console.WriteLine($"Данный элемент не найден");
-*/
+
 bool FindElement (int[] Array, int Find) 
 { 
     foreach (int ArrayEl in Array) 
@@ -77,11 +78,11 @@ bool FindElement (int[] Array, int Find)
     }
     return false;
 } 
-
+*/
 
 // Задача 35: Задайте одномерный массив из 123 случайных чисел. 
 // Найдите количество элементов массива, значения которых лежат в отрезке [10,99]. 
-
+/*
 int[] GetArray3 (int size) 
 { 
     int[] Array = new int[size];
@@ -89,7 +90,7 @@ int[] GetArray3 (int size)
       Array[i] = new Random().Next(0, 1001);   
     return Array; 
 } 
-/*
+
 int[] Array = GetArray3(123);
 Console.WriteLine($"[{String.Join(", ",Array)}]"); 
 int count = 0;

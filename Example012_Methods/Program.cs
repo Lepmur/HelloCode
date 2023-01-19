@@ -1,11 +1,15 @@
 ﻿// Вид 1
+/*
 void Method1()
 {
     System.Console.WriteLine("I am autor...");
 }
+*/
 // Method1();
 
+
 // Вид 2
+/*
 void Method2(string msg)
 {
     System.Console.WriteLine(msg);
@@ -21,16 +25,22 @@ void Method21(string msg, int count)
     }
 }
 //Method21(msg: "Hello, Andrey!",count: 5);
+*/
+
 
 // Вид 3
+/*
 int Method3()
 {
     return DateTime.Now.Year;
 }
 // int date = Method3();
 // System.Console.WriteLine(date);
+*/
+
 
 // Вид 4
+/*
 string Method4(int count, string text)
 {
     int i = 0;
@@ -44,6 +54,8 @@ string Method4(int count, string text)
 }
 // string res = Method4(10, "asdf");
 // System.Console.WriteLine(res);
+*/
+
 
 // Вывод таблицы умножения на кран
 /*

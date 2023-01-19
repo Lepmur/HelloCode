@@ -1,5 +1,5 @@
 ﻿// запросить длину последовательности фибоначчи, записать ее в массив и вывести массив на экран
-
+/*
 int[] genFibonacci(int size) // генерирует фибоначчу заданной длины, начиная с 1
 {
     int[] array = new int[size];
@@ -9,7 +9,7 @@ int[] genFibonacci(int size) // генерирует фибоначчу зада
         array[i] = array[i - 1] + array[i - 2];
     return array;
 }
-/*
+
 Console.Clear();
 System.Console.Write("Please, enter sequence length: ");
 int length = int.Parse(Console.ReadLine()!);
@@ -19,7 +19,7 @@ System.Console.WriteLine($"[ {String.Join("; ", genFibonacci(length))} ]");
 //==============================================================================================
 
 // запросить у пользователя 10 чисел, можно прекратить введя 0. посчитать среднее от кратных 3 из этих чисел
-
+/*
 double averageMultiples3(double[] array) // возвращает среднее арифметическое от кратных 3 элементов заданного массива
 {
     double sum = 0;
@@ -49,9 +49,8 @@ double[] readMassive() // возвращает массив длиной 10 из
             break;
     }
     return array;
-    System.Console.WriteLine();
 }
-/*
+
 Console.Clear();
 System.Console.WriteLine("Please, enter up to 10 integers (for stop enter 0): ");
 double[] numbers = readMassive();
@@ -61,7 +60,7 @@ System.Console.WriteLine($"Average of multiple of 3 = {averageMultiples3(numbers
 //==============================================================================================
 
 // запросить число и вывести его факториал (!n)
-
+/*
 long factorial(int n) // вычисляет факториал от n
 {
     long result = 1;
@@ -69,7 +68,7 @@ long factorial(int n) // вычисляет факториал от n
         result *= n--;
     return result;
 }
-/*
+
 Console.Clear();
 System.Console.Write("Please, enter integer (n): ");
 int number = int.Parse(Console.ReadLine()!);
@@ -123,7 +122,7 @@ bool Access(string log, string pass) // возвращает false или true �
     {
         Console.Clear();
         System.Console.Write("Please enter your login: ");
-        string loginByUser = Console.ReadLine();
+        string loginByUser = Console.ReadLine()!;
         System.Console.Write("Please enter your password: ");
         string passByUser = ReadPassword('*');
         if (loginByUser == log && passByUser == pass)
@@ -133,7 +132,7 @@ bool Access(string log, string pass) // возвращает false или true �
     }
     return false;
 }
-/*
+
 Console.Clear();
 string allowed = "Enter the system!";
 string denied = "The number of available tries have been exceeded!";
@@ -141,4 +140,3 @@ if (Access("johnsilver", "qwerty"))
     System.Console.WriteLine(allowed);
 else
     System.Console.WriteLine(denied);
-*/
