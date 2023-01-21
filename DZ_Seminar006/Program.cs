@@ -9,7 +9,7 @@ System.Console.Write("Enter numbers (separated by spase): ");
 string numbers = Console.ReadLine();
 string[] numS = numbers.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 System.Console.WriteLine($"You entered {HowPositive(numS)} positive numbers!");
-*/
+
 int HowPositive(string[] array)
 {
     int count = 0;
@@ -19,7 +19,7 @@ int HowPositive(string[] array)
     }
     return count;
 }
-
+*/
 
 //===================================================================
 //Написать программу, которая на вход принимает массив из любого количества элементов (не менее 6)
@@ -37,7 +37,7 @@ int[] array = CreateArray(size);
 System.Console.WriteLine($"[ {String.Join(", ", array)} ]");
 Sort(array);
 System.Console.WriteLine($"[ {String.Join(", ", array)} ]");
-*/
+
 int[] CreateArray(int size)
 {
     int[] array = new int[size];
@@ -64,3 +64,4 @@ void Sort(int[] array)
         }
     }
 }
+*/
